@@ -1,0 +1,320 @@
+/* Variables de colores */
+:root {
+  --primary-blue: #5A9BD5; /* Azul Celeste */
+  --secondary-blue: #0047AB; /* Azul Cobalto */
+  --dark-blue: #001F54; /* Azul Marino Oscuro */
+  --accent-orange: #EA711B; /* Naranja Quemado */
+  --soft-orange: #FF7043; /* Naranja Atardecer */
+  --neutral-white: #ffffff; /* Blanco */
+  --neutral-black: #000000; /* Negro */
+  --text-dark: #333333; /* Texto genérico */
+}
+
+/* Tipografías globales */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: normal;
+  color: var(--text-dark);
+  background-color: var(--neutral-white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--dark-blue);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--secondary-blue);
+}
+
+/* Texto general */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+/* Botones */
+.cta-btn {
+  display: inline-block;
+  background-color: var(--accent-orange);
+  color: var(--neutral-white);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--soft-orange);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: var(--neutral-white); /* White background */
+  border-bottom: 1px solid #ddd; /* Optional: Light border for separation */
+}
+
+header .logo img {
+  height: 120px;
+  margin-right: 10px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--dark-blue); /* Dark blue text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+header nav ul li a:hover {
+  color: var(--accent-orange); /* Accent orange on hover */
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  color: var(--neutral-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/images/hero-bg.png'); /* Imagen opcional */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Beneficios */
+.benefits {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--neutral-white);
+}
+
+.benefit-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.benefit {
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.benefit img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.benefit h3 {
+  color: var(--neutral-white);
+}
+
+/* Hero Section New*/
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--neutral-white);
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-frame {
+  background-color: rgba(0, 0, 0, 0.9); /* Black with transparency */
+  padding: 2rem;
+  border-radius: 10px; /* Slightly rounded corners */
+  display: inline-block;
+}
+
+.hero-frame h1 {
+  font-size: 4rem;
+  color: var(--primary-blue); /* Sky blue for the heading */
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-frame p {
+  font-size: 1.5rem;
+  color: var(--neutral-white); /* White for the paragraph text */
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: var(--accent-orange);
+  color: var(--neutral-white);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--soft-orange);
+}
+
+
+/* Servicios */
+.services {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--neutral-white);
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service {
+  background: var(--soft-orange);
+  color: var(--neutral-white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Proyectos */
+.projects {
+  padding: 3rem 2rem;
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project {
+  background: var(--neutral-white);
+  color: var(--text-dark);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  color: var(--secondary-blue);
+}
+
+/* Contacto */
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--neutral-white);
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact button {
+  background: var(--accent-orange);
+  color: var(--neutral-white);
+  padding: 0.8rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact button:hover {
+  background-color: var(--soft-orange);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-blue);
+  color: var(--neutral-white);
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  color: var(--neutral-white);
+}
+
+footer .social-icons img {
+  width: 32px;
+  height: 32px;
+  margin: 0 5px;
+}
