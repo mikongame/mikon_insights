@@ -1,14 +1,22 @@
+<!-- projects.html -->
 <section class="projects">
   <h2>Transformamos datos en resultados</h2>
-  <div class="project-container">
-      <div class="project">
+  <div class="project-container" id="projects-list">
+      <div class="project" data-case="attrition">
+          <h3>Reducción de la Rotación</h3>
+          <p>Descubre cómo logramos un ahorro de más de $130 millones prediciendo el tiempo hasta la salida de empleados.</p>
+          <button class="cta-btn view-case">Leer más</button>
+      </div>
+      <div class="project" data-case="roi">
           <h3>Optimización del ROI</h3>
           <p>Aumento del ROI en un 25% mediante estrategias basadas en análisis de datos.</p>
+          <button class="cta-btn view-case">Leer más</button>
       </div>
-      <div class="project">
-        <h3>Reducción de la Rotación</h3>
-        <p>Descubre cómo logramos un ahorro de más de $130 millones prediciendo el tiempo hasta la salida de empleados.</p>
-        <a href="#case-study" class="cta-btn">Leer más</a>
-      </div>      
   </div>
+
+  <!-- Contenedor donde se cargará el caso de estudio -->
+  <section id="case-study-content" class="hidden"></section>
 </section>
+
+
+

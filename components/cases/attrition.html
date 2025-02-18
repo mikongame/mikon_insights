@@ -1,0 +1,76 @@
+<section class="case-study">
+  <h2>Caso de Estudio: Reducción de la Rotación de Empleados</h2>
+  
+  <div class="case-content">
+      <h3>El Desafío</h3>
+      <p>La rotación de empleados impacta directamente en los costos de reclutamiento, formación y productividad. La falta de previsión en este fenómeno puede generar costos significativos y afectar la estabilidad organizacional. Nuestro reto era doble: predecir qué empleados tenían mayor probabilidad de abandonar la empresa y estimar cuándo ocurriría para permitir intervenciones estratégicas bien planificadas.</p>
+      
+      <h3>Construcción del Dataset</h3>
+      <p>Para desarrollar un modelo robusto, combinamos múltiples fuentes de datos de la empresa, generando un dataset más completo. Se integraron datos históricos sobre empleados, rendimiento, compensación, condiciones laborales y métricas de engagement.</p>
+      <p>Se realizó un exhaustivo tratamiento de valores nulos, empleando imputación basada en la distribución de cada variable. Además, analizamos la distribución del target, encontrando que el porcentaje de empleados que abandonaron la empresa era aproximadamente del <strong>18%</strong>, lo que justificó el uso de técnicas para manejar el desbalance en los datos.</p>
+
+      <h3>Clasificación con XGBClassifier Optimizado</h3>
+      <p>Para abordar el problema de la rotación, el primer paso fue desarrollar un modelo de clasificación basado en <strong>XGBoost</strong>. Tras un proceso de optimización de hiperparámetros con Optuna, logramos una precisión del <strong>84.7%</strong> y un recall del <strong>86.6%</strong>, permitiendo minimizar falsos negativos.</p>
+      <p>En la selección del modelo final, se priorizó aquel con <strong>mayor recall</strong>, ya que en este contexto, minimizar los falsos negativos (empleados que abandonan la empresa sin ser identificados por el modelo) es clave para reducir costes de reemplazo y disrupción organizacional. El análisis de costes mostró que el impacto financiero de un falso negativo ($50,000 por empleado) es significativamente mayor que el de un falso positivo ($5,000), lo que refuerza la elección de un modelo con alta sensibilidad.</p>
+      
+      <h3>Análisis de Feature Importances y SHAP Values</h3>
+      <p>Una vez identificado quién tenía mayor riesgo de rotación, profundizamos en las razones detrás de estas predicciones utilizando <strong>Feature Importances</strong> y <strong>SHAP Values</strong>. Estos análisis permitieron comprender qué factores impactaban más en la rotación, proporcionando información crucial para diseñar estrategias de retención.</p>
+      
+      <div class="visualization-container">
+          <img src="assets/visualizations/feature_importance.png" alt="Importancia de Variables">
+          <p><strong>Importancia de Variables:</strong> Destaca los factores más relevantes en la predicción de la rotación.</p>
+          
+          <img src="assets/visualizations/shap_values.png" alt="Valores SHAP">
+          <p><strong>Análisis de SHAP Values:</strong> Identifica las variables más influyentes en la rotación de empleados.</p>
+      </div>
+
+      <h3>Predicción del Tiempo hasta la Rotación con Random Survival Forests</h3>
+      <p>Para complementar el análisis y no solo predecir quién se iría, sino también <strong>cuándo</strong> lo haría, implementamos un modelo de <strong>Random Survival Forests (RSF)</strong>. Este modelo nos permitió estimar el tiempo esperado hasta la salida de cada empleado.</p>
+      <p>El análisis de las curvas de supervivencia mostró que ciertos grupos de empleados tienen una probabilidad más alta de abandonar la empresa en un periodo de tiempo más corto. En particular, aquellos con menos de <strong>2 años de antigüedad</strong> presentaron una mayor tasa de salida. Además, variables como la satisfacción laboral y el salario relativo jugaron un papel crucial en la retención.</p>
+      <p>Se compararon curvas de supervivencia segmentadas por:</p>
+      <ul>
+          <li><strong>Estado Civil</strong> (Soltero vs. Casado)</li>
+          <li><strong>Nivel de Trabajo</strong> (Categorías de posiciones dentro de la empresa)</li>
+          <li><strong>Trabajo Remoto</strong> (Remoto vs. Presencial)</li>
+      </ul>
+      <p>Si bien el modelo RSF añadió valor a la interpretación de la rotación, su desempeño en términos de precisión no fue superior al de XGBoost en la clasificación inicial, aunque sí aportó información valiosa para planificar estrategias temporales de retención.</p>
+      
+      <div class="visualization-container">
+          <img src="assets/visualizations/survival_curve_by_marital_status.png" alt="Curva de Supervivencia por Estado Civil">
+          <p><strong>Curva de Supervivencia:</strong> Comparación de probabilidad de retención según estado civil.</p>
+          
+          <img src="assets/visualizations/survival_curve_by_job_level.png" alt="Curva de Supervivencia por Nivel de Trabajo">
+          <p><strong>Curva de Supervivencia:</strong> Comparación de probabilidad de retención según nivel de trabajo.</p>
+          
+          <img src="assets/visualizations/survival_curve_by_remote_work.png" alt="Curva de Supervivencia por Trabajo Remoto">
+          <p><strong>Curva de Supervivencia:</strong> Comparación de probabilidad de retención entre empleados remotos y presenciales.</p>
+      </div>
+
+      <h3>Resultados Clave</h3>
+      <div class="results-grid">
+          <div class="result-card">
+              <h4>Precisión del Modelo</h4>
+              <p>84.7%</p>
+          </div>
+          <div class="result-card">
+              <h4>Recall del Modelo</h4>
+              <p>86.6%</p>
+          </div>
+          <div class="result-card">
+              <h4>Ahorro Potencial</h4>
+              <p>$131,175,000</p>
+          </div>
+          <div class="result-card">
+              <h4>Costo de No Hacer Nada</h4>
+              <p>$193,500,000</p>
+          </div>
+          <div class="result-card">
+              <h4>Costo con el Modelo</h4>
+              <p>$62,325,000</p>
+          </div>
+      </div>
+
+      <h3>Conclusión</h3>
+      <p>People Analytics no solo permite anticipar y reducir la rotación, sino que también impulsa cambios estratégicos en la cultura organizacional. Al integrar modelos de predicción avanzados con análisis interpretables, las empresas pueden tomar decisiones más informadas y eficaces para la retención del talento.</p>
+  </div>
+</section>
