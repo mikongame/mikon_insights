@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("projects-container", "components/projects.html");
   loadComponent("contact-container", "components/contact.html");
   loadComponent("footer-container", "components/footer.html");
+  loadComponent("case-study-container", "components/case-study.html");
 });
 
 
