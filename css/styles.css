@@ -241,7 +241,7 @@ header nav ul li a:hover {
 .projects {
   padding: 3rem 2rem;
   background: var(--primary-blue);
-  color: var(--neutral-white);
+  /* color: var(--neutral-white); */
 }
 
 .project-container {
