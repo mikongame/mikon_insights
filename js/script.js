@@ -19,14 +19,6 @@ function initializeMenuToggle() {
   }
 }
 
-// // Observer para detectar cuando el `header.html` se carga dinámicamente
-// const observer = new MutationObserver(() => {
-//   if (document.querySelector(".menu-toggle")) {
-//     initializeMenuToggle();
-//     observer.disconnect(); // Detener la observación una vez que el header esté cargado
-//   }
-// });
-
 
 // Función para cargar componentes dinámicamente
 function loadComponent(containerId, filePath) {
@@ -49,19 +41,31 @@ const observer = new MutationObserver(() => {
 // Configuración del observer para observar cambios en `#header-container`
 observer.observe(document.getElementById("header-container"), { childList: true });
 
-// Cargar los componentes
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("🚀 Script iniciado...");
+
+  // Cargar componentes dinámicos
   await loadComponent("header-container", "components/header.html");
   await loadComponent("hero-container", "components/hero.html");
   await loadComponent("benefits-container", "components/benefits.html");
   await loadComponent("services-container", "components/services.html");
-  await loadComponent("projects-container", "components/projects.html"); // Para cargar el caso abierto necesito poner una condicion que si el enlace es el del proyecto abierto, me cargue la pagina con el caso de estudio ya abierto
+  await loadComponent("projects-container", "components/projects.html"); 
   await loadComponent("contact-container", "components/contact.html");
   await loadComponent("footer-container", "components/footer.html");
 
-  // Manejar clics en los botones de "Leer más"
+  // Una vez que los componentes se han cargado, verificamos si hay un caso en la URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const caseName = urlParams.get("case");
+
+  if (caseName) {
+      console.log(`🔍 Detectado parámetro en la URL: ${caseName}`);
+      loadCaseStudy(caseName);
+  }
+
+  // Delegación de eventos para "Leer más" y "Cerrar"
   document.addEventListener("click", function (event) {
       if (event.target.classList.contains("view-case")) {
+          event.preventDefault();
           const caseName = event.target.closest(".project").getAttribute("data-case");
           loadCaseStudy(caseName);
       }
@@ -71,7 +75,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
   });
 });
-
 
 function loadCaseStudy(caseName) {
   if (!caseName) return;
