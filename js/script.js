@@ -143,18 +143,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("z1S6y48MZ5PIPDneM"); // Sustituye con tu Public Key de EmailJS
 
-  const name = document.querySelector("input[type='text']").value;
-  const email = document.querySelector("input[type='email']").value;
-  const message = document.querySelector("textarea").value;
-
-  if (name && email && message) {
-      alert("¡Gracias por contactarnos! Nos pondremos en contacto pronto.");
-  } else {
-      alert("Por favor, completa todos los campos.");
+  const contactForm = document.getElementById("contact-form");
+  if (!contactForm) {
+      console.error("❌ Formulario de contacto no encontrado.");
+      return;
   }
+
+  contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.querySelector("input[name='name']").value;
+      const email = document.querySelector("input[name='email']").value;
+      const message = document.querySelector("textarea[name='message']").value;
+
+      if (!name || !email || !message) {
+          alert("Por favor, completa todos los campos.");
+          return;
+      }
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        signature_url: "https://drive.google.com/uc?export=view&id=1iIj6uesm70LJROvUFSIt6zCzSesqkwOS"
+    };
+    
+
+      emailjs.send("service_350kf7n", "template_it17y9k", templateParams)
+          .then(response => {
+              console.log("✅ Correo enviado con éxito:", response);
+              alert("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
+              contactForm.reset();
+          })
+          .catch(error => {
+              console.error("❌ Error al enviar el correo:", error);
+              alert("Hubo un problema al enviar tu mensaje. Inténtalo más tarde.");
+          });
+  });
 });
 
 function initializeLightbox() {
