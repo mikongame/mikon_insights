@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const observer = new MutationObserver(() => {
     if (document.querySelector(".menu-toggle")) {
       initializeMenuToggle();
-      initializeMenuLinks();
       observer.disconnect();
     }
   });
