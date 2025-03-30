@@ -195,4 +195,5 @@ if (contactForm) {
       });
   });
 }
+initializeMenuLinks();
 });
