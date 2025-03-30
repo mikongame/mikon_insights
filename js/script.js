@@ -138,6 +138,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (el) el.style.display = "none";
       });
 
+  }else if (path === "/conocenos") {
+    await loadComponent("conocenos-container", "components/conocenos-content.html");
+  
+    ["benefits-container", "services-container", "projects-container", "cv-container"]
+      .forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+      });
+  
   } else {
     // Página normal
     await loadComponent("benefits-container", "components/benefits.html");

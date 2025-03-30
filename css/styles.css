@@ -804,3 +804,70 @@ footer a {
   }
 }
 
+
+
+/* Sección Conócenos */
+.conocenos {
+  background-color: #fefefe;
+  padding: 4rem 2rem;
+  color: var(--text-dark);
+}
+
+.conocenos-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.conocenos h1, .conocenos h2 {
+  color: var(--secondary-blue);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.conocenos p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.hexagon-values {
+  padding: 0;
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.hexagon-values li {
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brand-quote {
+  border-left: 5px solid var(--accent-orange);
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: #fff6f1;
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .conocenos {
+    padding: 2rem 1rem;
+  }
+
+  .hexagon-values li {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .brand-quote {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
