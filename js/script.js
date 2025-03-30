@@ -14,12 +14,24 @@ async function loadComponent(containerId, filePath) {
 
 // Función para ajustar los enlaces del menú cuando se está en /cv
 function initializeMenuLinks() {
-  const links = document.querySelectorAll(".nav-menu a[href^='#']");
-  links.forEach(link => {
-    const target = link.getAttribute("href");
-    // Reemplazar href por versión absoluta hacia la home
-    link.setAttribute("href", `/#${target.replace("#", "")}`);
-  });
+  // Esperar brevemente por si el contenido aún no ha cargado
+  setTimeout(() => {
+    const links = document.querySelectorAll(".nav-menu a[href^='#']");
+    if (links.length === 0) {
+      console.warn("⚠️ No se encontraron enlaces del menú para modificar.");
+      return;
+    }
+
+    links.forEach(link => {
+      const target = link.getAttribute("href");
+      if (target && !target.startsWith("/#")) {
+        // Reemplazar href por versión absoluta hacia la home
+        link.setAttribute("href", `/#${target.replace("#", "")}`);
+      }
+    });
+
+    console.log("🔗 Enlaces del menú reescritos para navegación SPA.");
+  }, 200); // 200ms de espera como margen de seguridad
 }
 
 // Función para inicializar menú hamburguesa tras cargar el header
@@ -103,6 +115,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const path = window.location.pathname;
 
   await loadComponent("header-container", "components/header.html");
+  await loadComponent("hero-container", "components/hero.html");
+  await loadComponent("contact-container", "components/contact.html");
   await loadComponent("footer-container", "components/footer.html");
 
   // Inicializar menú hamburguesa cuando el header esté listo
@@ -119,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadComponent("cv-container", "components/cv-content.html");
 
     // Ocultar todo lo demás
-    ["hero-container", "benefits-container", "services-container", "projects-container", "contact-container"]
+    ["benefits-container", "services-container", "projects-container"]
       .forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
@@ -127,11 +141,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   } else {
     // Página normal
-    await loadComponent("hero-container", "components/hero.html");
     await loadComponent("benefits-container", "components/benefits.html");
     await loadComponent("services-container", "components/services.html");
     await loadComponent("projects-container", "components/projects.html");
-    await loadComponent("contact-container", "components/contact.html");
   }
 
   // Comprobación por parámetro ?case=
