@@ -12,6 +12,16 @@ async function loadComponent(containerId, filePath) {
   }
 }
 
+// Función para ajustar los enlaces del menú cuando se está en /cv
+function initializeMenuLinks() {
+  const links = document.querySelectorAll(".nav-menu a[href^='#']");
+  links.forEach(link => {
+    const target = link.getAttribute("href");
+    // Reemplazar href por versión absoluta hacia la home
+    link.setAttribute("href", `/#${target.replace("#", "")}`);
+  });
+}
+
 // Función para inicializar menú hamburguesa tras cargar el header
 function initializeMenuToggle() {
   const menuToggle = document.querySelector(".menu-toggle");
@@ -99,17 +109,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const observer = new MutationObserver(() => {
     if (document.querySelector(".menu-toggle")) {
       initializeMenuToggle();
+      initializeMenuLinks();
       observer.disconnect();
     }
   });
   observer.observe(document.getElementById("header-container"), { childList: true });
 
   if (path === "/cv") {
-    await loadComponent("hero-container", "components/hero.html");
     await loadComponent("cv-container", "components/cv-content.html");
 
     // Ocultar todo lo demás
-    ["benefits-container", "services-container", "projects-container", "contact-container"]
+    ["hero-container", "benefits-container", "services-container", "projects-container", "contact-container"]
       .forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
