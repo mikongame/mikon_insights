@@ -808,7 +808,12 @@ footer a {
 
 /* Sección Conócenos */
 .conocenos {
-  background-color: #fefefe;
+  background-color: var(--primary-blue);
+  padding: 4rem 2rem;
+}
+
+.conocenos-content {
+  background-color: var(--neutral-white);
   padding: 4rem 2rem;
   color: var(--text-dark);
 }
@@ -828,6 +833,7 @@ footer a {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .hexagon-values {
@@ -852,6 +858,7 @@ footer a {
   background-color: #fff6f1;
   font-style: italic;
   margin: 2rem 0;
+  text-align: center;
 }
 
 /* Responsive */
@@ -870,4 +877,3 @@ footer a {
     padding: 1rem;
   }
 }
-
