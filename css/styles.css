@@ -808,14 +808,19 @@ footer a {
 
 /* Sección Conócenos */
 .conocenos {
-  background-color: var(--primary-blue);
+  background-color: #f9f9f9;);
   padding: 4rem 2rem;
+  color: var(--text-dark);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .conocenos-content {
   background-color: var(--neutral-white);
-  padding: 4rem 2rem;
   color: var(--text-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 2 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .conocenos-container {
