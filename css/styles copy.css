@@ -75,6 +75,15 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
 header .logo img {
   height: 120px;
   margin-right: 10px;
