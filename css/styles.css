@@ -57,7 +57,7 @@ p {
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -121,7 +121,7 @@ header .logo img {
 .hero-frame {
   background-color: rgba(0, 0, 0, 0.9);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-block;
 }
 
@@ -147,7 +147,7 @@ header .logo img {
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -173,7 +173,7 @@ header .logo img {
   background: var(--primary-blue);
   color: var(--neutral-white);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   width: 30%;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -208,7 +208,7 @@ header .logo img {
   background: var(--soft-orange);
   color: var(--neutral-white);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   width: 30%;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -237,7 +237,7 @@ header .logo img {
   background: var(--neutral-white);
   color: var(--text-dark);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   width: 30%;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -267,7 +267,7 @@ header .logo img {
   cursor: pointer;
   margin-bottom: 15px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 #close-case-study:hover {
@@ -277,7 +277,7 @@ header .logo img {
 .case-study {
   padding: 2rem;
   background: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -392,7 +392,7 @@ header .logo img {
 .contact input, .contact textarea {
   padding: 0.8rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   font-family: inter;
 }
@@ -403,7 +403,7 @@ header .logo img {
   padding: 0.8rem;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -645,7 +645,7 @@ footer a {
   margin: 40px auto;
   background: var(--neutral-white);
   padding: 0;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
@@ -658,7 +658,7 @@ footer a {
   margin: 15px, 15px, 15px, 15px;
   display: flex;
   align-items: center;
-  border-radius: 12px 12px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .cv-container .cv-header a {
@@ -805,22 +805,27 @@ footer a {
 }
 
 
-
 /* Sección Conócenos */
 .conocenos {
   background-color: #f9f9f9;
   padding: 4rem 2rem;
   color: var(--text-dark);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .conocenos-content {
   background-color: var(--neutral-white);
   color: var(--text-dark);
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 2 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.conocenos img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 8px;
 }
 
 .conocenos-container {
@@ -860,7 +865,8 @@ footer a {
   border-left: 5px solid var(--accent-orange);
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
-  background-color: var(--neutral-white);
+  border-radius: 0px 8px 8px 0px;
+  background-color: rgba(234, 113, 27, 0.10);
   font-style: italic;
   margin: 2rem 0;
   text-align: center;
