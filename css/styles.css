@@ -855,7 +855,7 @@ footer a {
   border-left: 5px solid var(--accent-orange);
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
-  background-color: #fff6f1;
+  background-color: var(--neutral-white);
   font-style: italic;
   margin: 2rem 0;
   text-align: center;
