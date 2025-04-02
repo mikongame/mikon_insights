@@ -27,7 +27,10 @@
         <div id="footer-container"></div>
     </div>
     <!-- Script para cargar componentes y manejar eventos -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="module">
+        import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
+        window.emailjs = emailjs;
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

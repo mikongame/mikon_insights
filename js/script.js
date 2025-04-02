@@ -194,7 +194,7 @@ if (contactForm) {
 
     console.log("📨 Enviando datos a EmailJS:", templateParams);
 
-    emailjs.send("service_350kf7n", "template_it17y9k", templateParams)
+    emailjs.send("service_350kf7n", "template_mikoncontact", templateParams)
       .then(() => {
         alert("¡Gracias por tu mensaje!");
         contactForm.reset();
