@@ -186,11 +186,18 @@ if (contactForm) {
       return;
     }
 
+    // const templateParams = {
+    //   from_name: name,
+    //   from_email: email,
+    //   message: message,
+    // };
+
     const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message,
+      from_name: "Miguel Prueba",
+      from_email: "miguel@test.com",
+      message: "Esto es una prueba directa",
     };
+    
 
     console.log("📨 Enviando datos a EmailJS:", templateParams);
 
