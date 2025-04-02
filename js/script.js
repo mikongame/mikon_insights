@@ -203,5 +203,6 @@ if (contactForm) {
       });
   });
 }
+initializeMenuToggle(); 
 initializeMenuLinks();
 });
