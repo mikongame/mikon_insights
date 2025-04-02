@@ -190,7 +190,6 @@ if (contactForm) {
       from_name: name,
       from_email: email,
       message: message,
-      signature_url: "https://drive.google.com/uc?export=view&id=1iIj6uesm70LJROvUFSIt6zCzSesqkwOS"
     };
 
     console.log("📨 Enviando datos a EmailJS:", templateParams);
@@ -202,7 +201,7 @@ if (contactForm) {
       })
       .catch(error => {
         console.error("❌ Error al enviar el correo:", error);
-        alert("Hubo un error. Intenta más tarde.\nDetalles en consola.");
+        alert("Hubo un error. Intentalo de nuevo más tarde.");
       });
   });
 }
