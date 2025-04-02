@@ -200,8 +200,9 @@ if (contactForm) {
         alert("¡Gracias por tu mensaje!");
         contactForm.reset();
       })
-      .catch(() => {
-        alert("Hubo un error. Intenta más tarde.");
+      .catch(error => {
+        console.error("❌ Error al enviar el correo:", error);
+        alert("Hubo un error. Intenta más tarde.\nDetalles en consola.");
       });
   });
 }
