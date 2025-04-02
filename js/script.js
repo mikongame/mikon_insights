@@ -193,6 +193,8 @@ if (contactForm) {
       signature_url: "https://drive.google.com/uc?export=view&id=1iIj6uesm70LJROvUFSIt6zCzSesqkwOS"
     };
 
+    console.log("📨 Enviando datos a EmailJS:", templateParams);
+
     emailjs.send("service_350kf7n", "template_it17y9k", templateParams)
       .then(() => {
         alert("¡Gracias por tu mensaje!");
